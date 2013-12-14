@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+	<% if !(vote = current_user.votes.find_by_votable_id_and_votable_type(id, type)) %>
+		<%= form_tag votes_path, remote: true do %>
+			<%= hidden_field_tag :votable_type, '', value: type %>
+			<%= hidden_field_tag :votable_id, '', value: id %>
+			<%= button_tag "<i class='fi-like'></i>&nbsp;&nbsp;&nbsp;Vote".html_safe %>
+		<% end %>
+	<% end %>
+<% end %>
