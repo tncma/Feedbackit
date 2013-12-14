@@ -3,6 +3,7 @@ FeedbackIt::Application.routes.draw do
 
   resources :feedbacks
   resources :votes
+  resources :downvotes
 
   get "static_pages/index"
   get "profile" => "users#index"

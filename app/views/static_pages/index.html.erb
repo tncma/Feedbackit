@@ -2,7 +2,7 @@
 	<div id="">
 		<%= f.heading %><br />
 		<%= f.feedback_content %>
-		<div id="vote-feedback"><%= render 'votes/votes', id: f.id, type: "Feedback" %></div>
-		<div id="vote-count-feedback"><%= pluralize f.votes.count, 'vote' %></div>
+		<%= render 'vote_downvote', id: f.id, type: "Feedback" %>
+		<div id="vote-count-feedback"><%= pluralize (f.votes.count - f.downvotes.count), 'vote' %></div>
 	</div>
 <% end %>

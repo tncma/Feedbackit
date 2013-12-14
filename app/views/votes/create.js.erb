@@ -1,3 +1,2 @@
-
-$("#vote-feedback").html("<%= escape_javascript render('votes/votes', type: @votable.class.to_s, id: @votable.id) %>");
-$("#vote-count-feedback").html("<%= escape_javascript pluralize @votable.votes.count, 'like' %>");
+$("#downvote-feedback").html("<%= escape_javascript render('static_pages/vote_downvote', type: @votable.class.to_s, id: @votable.id) %>");
+$("#vote-count-feedback").html("<%= escape_javascript pluralize (@votable.votes.count - @votable.downvotes.count), 'vote' %>");

@@ -6,6 +6,11 @@ class VotesController < ApplicationController
 		vote = Vote.new
 		vote.votable = @votable
 		vote.user = current_user
+		
+		if(downvote = Downvote.find_by_downvotable_id(@votable.id))
+			downvote.destroy!
+		end
+
 		vote.save!
 
 		find_votable
