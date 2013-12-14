@@ -1,17 +1,17 @@
 <%= form_for(@feedback, html: { :multipart => true }, remote: true)  do |f| %>	
-	
+
 	<%= f.label :heading %>
 	<%= f.text_field :heading %>
-	
+
 	<%= f.label :feedback_content %>
 	<%= f.text_area :feedback_content %>
 
 	<%= f.label :when %>
 	<%= f.text_field :when, value: Time.now %>
-	
+
 	<%= f.label :where %>
 	<%= f.text_field :where, :id => 'gmaps-input-address', :placeholder => 'Start typing a place...'%>
-	
+
 	<%= f.label :image %>
 	<%= f.file_field :image %>
 
@@ -21,4 +21,3 @@
 	<%= f.submit %>
 
 <% end %>
-  
