@@ -1,5 +1,8 @@
 FeedbackIt::Application.routes.draw do
   devise_for :users
+
+  resources :feedbacks
+
   get "static_pages/index"
   get "profile" => "users#index"
   # The priority is based upon order of creation: first created -> highest priority.
