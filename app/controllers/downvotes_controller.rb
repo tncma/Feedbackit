@@ -12,9 +12,14 @@ class DownvotesController < ApplicationController
             vote.destroy!
         end
 
+        @downvote.save!
+
+        @feedback.update_attribute(:votes_count, get_votes_count)
+
 		respond_to do |format|
 			format.js
 		end
+		
 	end
 
 	def destroy
@@ -22,9 +27,15 @@ class DownvotesController < ApplicationController
 		downvote = Downvote.find(params[:id])
 		downvote.destroy
 
+		@feedback.update_attribute(:votes_count, get_votes_count)
+
 		respond_to do |format|
 			format.js
 		end
+	end
+
+	def get_votes_count
+		votes_count = @feedback.votes.count - @feedback.downvotes.count
 	end
 
 end
