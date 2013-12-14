@@ -23,6 +23,7 @@ gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0'
 
 gem 'carrierwave'
+gem 'remotipart', '~> 1.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

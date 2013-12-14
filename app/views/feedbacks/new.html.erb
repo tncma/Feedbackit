@@ -15,6 +15,9 @@
 	<%= f.label :where %>
 	<%= f.text_field :where, :id => 'gmaps-input-address', :placeholder => 'Start typing a place...'%>
 	
+	<%= f.label :image %>
+	<%= f.file_field :image %>
+
 	<%= f.select :category_id, options_for_select(@categories) %>
 	<%= f.select :tag_id, options_for_select(@tags) %>
 
