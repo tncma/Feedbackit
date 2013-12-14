@@ -34,7 +34,7 @@ class FeedbacksController < ApplicationController
 	private
 
 		def feedback_parameters
-			params.require(:feedback).permit(:feedback_content, :when, :where, :category_id, :tag_id)
+			params.require(:feedback).permit(:heading,:feedback_content, :when, :where, :category_id, :tag_id)
 		end
 
 end

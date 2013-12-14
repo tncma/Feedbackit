@@ -3,6 +3,9 @@
 		
 	<!-- form_for @object, html: { multipart: true }, do |f| -->
 	<!-- form_for @object, html: { class: "classname" }, do |f| -->
+	<%= f.label :heading %>
+	<%= f.text_area :heading %>
+	
 	<%= f.label :feedback_content %>
 	<%= f.text_area :feedback_content %>
 
@@ -10,7 +13,7 @@
 	<%= f.text_field :when, value: Time.now %>
 	
 	<%= f.label :where %>
-	<%= f.text_field :where %>
+	<%= f.text_field :where, :id => 'gmaps-input-address', :placeholder => 'Start typing a place...'%>
 	
 	<%= f.select :category_id, options_for_select(@categories) %>
 	<%= f.select :tag_id, options_for_select(@tags) %>
