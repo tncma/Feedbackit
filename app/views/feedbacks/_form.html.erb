@@ -1,23 +1,76 @@
-<%= form_for(@feedback, html: { :multipart => true }, remote: true)  do |f| %>	
+<div class="container">
+      <br>
+      <div class="row">
+          <div class="col-lg-6" style="float:none !important; margin:0 auto;">
+            <div class="well">
+              <%= form_for(@feedback, html: { :multipart => true, class: "bs-example form-horizontal", id: "feedback" }, remote: true)  do |f| %>
+                <fieldset>
+                  <legend>Submit Feedback</legend>
+                  	
+					<div class="form-group">
+						<%= f.label :heading, class: "col-lg-2 control-label" %>
+						<div class="col-lg-10">
+							<%= f.text_field :heading, class: 'form-control' %>
+						</div>
+					</div>
+                  	<div class="form-group">
+                    	<%= f.label :feedback_content, class: "col-lg-2 control-label" %>
+						<div class="col-lg-10">
+							<%= f.text_area :feedback_content, rows: "5",  class: 'form-control', style: "height: 200px;" %>
+						</div>
+                  	</div>
 
-	<%= f.label :heading %>
-	<%= f.text_field :heading %>
+                  <div class="form-group">
+                    <%= f.label :when, class: "col-lg-2 control-label" %>
+                    <div class="col-lg-10">
+						<%= f.text_field :when, class: 'form-control' , id:"feedback-date" %>
+					</div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label">Type:</label>
+                    <div class="col-lg-10">
+                      <select id="select" class="form-control">
+                      <% @tags.each do |tag| %>
+                      	<option value="<%= tag.id %>"><%= tag.name %></option>
+                      <% end %>
+                    </select>
+                    </div>
+                  </div>
 
-	<%= f.label :feedback_content %>
-	<%= f.text_area :feedback_content %>
+                  <div class="form-group">
+                    <label class="col-lg-2 control-label" for="select">Category:</label>
+                    <div class="col-lg-10">
+                      <select id="select" class="form-control">
+                      <% @categories.each do |category| %>
+                      	<option value="<%= category.id %>"><%= category.name %></option>
+                      <% end %>
+                    </select>
+                      
+                    </div>
+                  </div>
 
-	<%= f.label :when %>
-	<%= f.text_field :when, value: Time.now %>
-
-	<%= f.label :where %>
-	<%= f.text_field :where, :id => 'gmaps-input-address', :placeholder => 'Start typing a place...'%>
-
-	<%= f.label :image %>
-	<%= f.file_field :image %>
-
-	<%= f.select :category_id, options_for_select(@categories) %>
-	<%= f.select :tag_id, options_for_select(@tags) %>
-
-	<%= f.submit %>
-
-<% end %>
+                  <div class="form-group">
+                  <%= f.label :where, class: "col-lg-2 control-label" %>
+					<div class="col-lg-10">
+						<%= f.text_field :where, :id => 'gmaps-input-address', :placeholder => 'Start typing a place...', class: "form-control" %>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                  	<%= f.label :image, class: "col-lg-2 control-label" %>
+                  	<div class="col-lg-10">
+				  		<%= f.file_field :image, class: "form-control" %>
+				  	</div>
+				  </div>
+                  <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                      <button type="submit" class="btn btn-primary">Submit</button> 
+                      <button class="btn btn-default">Cancel</button> 
+                    </div>
+                  </div>
+                </fieldset>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>

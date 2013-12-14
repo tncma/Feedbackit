@@ -32,10 +32,8 @@ class FeedbacksController < ApplicationController
 	private
 
 		def collect_data
-			@categories = Category.all.map{|p| [ p.name, p.id]}  	
-	  		@categories.unshift ["Select Category","0"]
-	  		@tags = Tag.all.map{ |t| [ t.name, t.id ]}
-	  		@tags.unshift ["Select Type", "0"]
+			@categories = Category.all
+	  		@tags = Tag.all
 		end
 
 		def feedback_parameters
