@@ -1,0 +1,21 @@
+<%= form_for @feedback do |f| %>
+	
+		
+	<!-- form_for @object, html: { multipart: true }, do |f| -->
+	<!-- form_for @object, html: { class: "classname" }, do |f| -->
+	<%= f.label :feedback_content %>
+	<%= f.text_area :feedback_content %>
+
+	<%= f.label :when %>
+	<%= f.text_field :when, value: Time.now %>
+	
+	<%= f.label :where %>
+	<%= f.text_field :where %>
+	
+	<%= f.select :category_id, options_for_select(@categories) %>
+	<%= f.select :tag_id, options_for_select(@tags) %>
+
+	<%= f.submit %>
+
+<% end %>
+  
