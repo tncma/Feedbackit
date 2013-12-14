@@ -12,6 +12,7 @@ class FeedbacksController < ApplicationController
 
 	def create
 		@feedback = Feedback.new feedback_parameters
+		@feedback.user = current_user
 		if @feedback.save!
 			redirect_to root_url
 		else

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131214113648) do
+ActiveRecord::Schema.define(version: 20131214124441) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -29,10 +29,12 @@ ActiveRecord::Schema.define(version: 20131214113648) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "heading"
+    t.integer  "user_id"
   end
 
   add_index "feedbacks", ["category_id"], name: "index_feedbacks_on_category_id"
   add_index "feedbacks", ["tag_id"], name: "index_feedbacks_on_tag_id"
+  add_index "feedbacks", ["user_id"], name: "index_feedbacks_on_user_id"
 
   create_table "tags", force: true do |t|
     t.string   "name"
@@ -64,5 +66,15 @@ ActiveRecord::Schema.define(version: 20131214113648) do
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "votes", force: true do |t|
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end
