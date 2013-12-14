@@ -14,12 +14,6 @@ class FeedbacksController < ApplicationController
 		respond_to do |format|
 			format.js
 		end
-
-		#if @feedback.save!
-		#	redirect_to root_url
-		#else
-		#   render 'new'
-		#end
 	end
 
 	def edit
@@ -31,7 +25,8 @@ class FeedbacksController < ApplicationController
 	end
 
 	def destroy
-		
+		@feedback = Feedback.find(params[:id])
+		@feedback.destroy
 	end
 
 	private
