@@ -22,7 +22,16 @@ class DownvotesController < ApplicationController
 	end
 
 	def destroy
-		
+		downvote = Downvote.find(params[:id])
+		@downvotable_id = downvote.downvotable_id
+		@downvotable_type = downvote.downvotable_type
+		downvote.destroy
+
+		find_downvotable
+
+		respond_to do |format|
+			format.js
+		end
 	end
 
 	def find_downvotable

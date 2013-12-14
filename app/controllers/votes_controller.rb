@@ -13,8 +13,6 @@ class VotesController < ApplicationController
 
 		vote.save!
 
-		find_votable
-
 		respond_to do |format|
 			format.js
 		end
@@ -22,7 +20,16 @@ class VotesController < ApplicationController
 	end
 
 	def destroy
-		
+		vote = Vote.find(params[:id])
+		@votable_id = vote.votable_id
+		@votable_type = vote.votable_type
+		vote.destroy
+
+		find_votable
+
+		respond_to do |format|
+			format.js
+		end
 	end
 
 	def find_votable

@@ -1,0 +1,3 @@
+<%= form_tag downvote_path(id), method: :delete, remote: true do %>
+	<%= button_tag "Downvoted".html_safe, class: 'button tiny' %>
+<% end %>
