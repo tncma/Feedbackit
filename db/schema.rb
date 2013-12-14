@@ -41,13 +41,13 @@ ActiveRecord::Schema.define(version: 20131214182855) do
   end
 
   create_table "downvotes", force: true do |t|
-    t.integer  "downvotable_id"
-    t.string   "downvotable_type"
+    t.integer  "feedback_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "downvotes", ["feedback_id"], name: "index_downvotes_on_feedback_id"
   add_index "downvotes", ["user_id"], name: "index_downvotes_on_user_id"
 
   create_table "feedbacks", force: true do |t|
@@ -92,7 +92,6 @@ ActiveRecord::Schema.define(version: 20131214182855) do
     t.datetime "confirmation_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
@@ -100,13 +99,13 @@ ActiveRecord::Schema.define(version: 20131214182855) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "votes", force: true do |t|
-    t.integer  "votable_id"
-    t.string   "votable_type"
+    t.integer  "feedback_id"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "votes", ["feedback_id"], name: "index_votes_on_feedback_id"
   add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end

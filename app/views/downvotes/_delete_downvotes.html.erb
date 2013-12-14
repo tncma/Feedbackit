@@ -1,3 +1,3 @@
-<%= form_tag downvote_path(id), method: :delete, remote: true do %>
-	<%= button_tag "<span class='glyphicon glyphicon-chevron-down'></span>".html_safe, class: 'downvote' %>
+<%= form_for([downvote.feedback, downvote], method: :delete, remote: true) do |f| %>
+	<%= f.button "<span class='glyphicon glyphicon-chevron-down'></span>".html_safe, class: 'downvote' %>
 <% end %>

@@ -2,9 +2,10 @@ FeedbackIt::Application.routes.draw do
   devise_for :admins
   devise_for :users
 
-  resources :feedbacks
-  resources :votes
-  resources :downvotes
+  resources :feedbacks do 
+    resources :votes
+    resources :downvotes
+  end
 
   get "static_pages/index"
   get "profile" => "users#index"

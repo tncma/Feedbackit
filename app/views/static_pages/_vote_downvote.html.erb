@@ -1,15 +1,18 @@
 <% if user_signed_in? %>
-	<% if !user_has_voted?(id) %>
-		<%= render 'votes/votes', type: type, id: id %>
+	<% if (vote = user_has_voted? f.id) %>
+		<%= render 'votes/delete_votes', vote: vote %>
 	<% else %>
-		<%= render 'votes/delete_votes', type: type, id: user_has_voted?(id) %>
+		<%= render 'votes/votes', f:f %>
 	<% end %>
-	<div id="vote-count-feedback-<%= id %>" style="text-align:center;">
+
+	<div id="vote-count-feedback-<%= f.id %>" class="text-center">
 		<%= f.votes.count - f.downvotes.count %>
 	</div>
-	<% if !user_has_downvoted?(id) %>
-		<%= render 'downvotes/downvotes', type: type, id: id  %>
+
+	<% if (downvote = user_has_downvoted? f.id) %>
+		<%= render 'downvotes/delete_downvotes', downvote: downvote %>
 	<% else %>
-		<%= render 'downvotes/delete_downvotes', type: type, id: user_has_downvoted?(id) %>
+		<%= render 'downvotes/downvotes', f:f %>
 	<% end %>
+
 <% end %>

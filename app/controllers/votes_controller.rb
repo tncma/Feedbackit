@@ -1,46 +1,29 @@
 class VotesController < ApplicationController
 
-	before_filter :authenticate_user!, :find_votable, only: [:create]
+	before_filter :authenticate_user!
 
 	def create
-		vote = Vote.new
-		vote.votable = @votable
-		vote.user = current_user
-		
-		if(downvote = Downvote.find_by_downvotable_id(@votable.id))
-			downvote.destroy!
+		@feedback = Feedback.find(params[:feedback_id])
+		@vote = @feedback.votes.new do |vote|
+			vote.user = current_user
 		end
-
-		vote.save!
+		
+		if(downvote = current_user.downvotes.find_by_feedback_id @feedback.id)
+            downvote.destroy!
+        end
 
 		respond_to do |format|
 			format.js
 		end
-
 	end
 
 	def destroy
+		@feedback = Feedback.find(params[:feedback_id])
 		vote = Vote.find(params[:id])
-		@votable_id = vote.votable_id
-		@votable_type = vote.votable_type
 		vote.destroy
-
-		find_votable
 
 		respond_to do |format|
 			format.js
 		end
 	end
-
-	def find_votable
-		votable_id = params[:votable_id] || @votable_id
-		votable_type = params[:votable_type] || @votable_type
-
-		if user_signed_in?
-			if votable_type == "Feedback"
-				@votable = Feedback.find_by_id(votable_id)
-			end	
-		end
-	end
-
 end
