@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
 
-	before_filter :find_votable, only: [:create]
+	before_filter :authenticate_user!, :find_votable, only: [:create]
 
 	def create
 		vote = Vote.new

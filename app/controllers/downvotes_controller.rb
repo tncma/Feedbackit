@@ -1,6 +1,6 @@
 class DownvotesController < ApplicationController
 
-	before_filter :find_downvotable, only: [:create]
+	before_filter :authenticate_user!, :find_downvotable, only: [:create]
 
 	def create
 		downvote = Downvote.new

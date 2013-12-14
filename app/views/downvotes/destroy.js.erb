@@ -1,2 +1,2 @@
-$("#vote-downvote-<%= @downvotable.id %>").html("<%= escape_javascript render('static_pages/vote_downvote', type: @downvotable.class.to_s, id: @downvotable.id) %>");
-$("#vote-count-feedback-<%= @downvotable.id %>").html("<%= escape_javascript pluralize (@downvotable.votes.count - @downvotable.downvotes.count), 'vote' %>");
+$("#vote-downvote-<%= @downvotable.id %>").html("<%= escape_javascript render('static_pages/vote_downvote', type: @downvotable.class.to_s, id: @downvotable.id, f: @downvotable) %>");
+$("#vote-count-feedback-<%= @downvotable.id %>").html("<%= @downvotable.votes.count - @downvotable.downvotes.count %>");

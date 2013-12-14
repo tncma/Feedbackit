@@ -28,5 +28,13 @@ body{
 .upvote{
 	background: none; 
 	box-shadow:none !important;
-	border:none;color: #18bc9c;
+	border:none;
+	color: #18bc9c;
+}
+
+.downvote{
+	background: none; 
+	box-shadow:none !important;
+	border:none;
+	color: #202d3b;
 }

@@ -3,7 +3,7 @@
 		<div class="col-lg-12">
 			<div id="votes" style="width:24px; float:left; margin-top:30px; height:auto;">
 				<div id="vote-downvote-<%= f.id %>">
-					<%= render 'vote_downvote', id: f.id, type: "Feedback", f:f %>
+					<%= render 'vote_downvote', id: f.id, type: "Feedback", f: f %>
 				</div>
          	</div>
          	<div class="col-lg-10 col-small-12">
@@ -11,7 +11,7 @@
 	         	<h2><%= f.heading %></h2>
 				<p><%= f.feedback_content %></p>
 				<br>
-            	<span class="label label-success" style="float:right;">Education</span>
+            	<span class="label label-success" style="float:right;"><%= f.tag.name %></span>
           	</div>
           	</div>
 		</div>	
