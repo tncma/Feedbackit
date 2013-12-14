@@ -1,8 +1,8 @@
 <% if user_signed_in? %>
-	<% if !(vote = current_user.votes.find_by_votable_id_and_votable_type(id, type)) %>
-		<div id="vote-feedback"><%= render 'votes/votes', type: type, id: id %></div>
+	<% if !user_has_voted?(id) %>
+		<%= render 'votes/votes', type: type, id: id %>
 	<% end %>
-	<% if !(downvote = current_user.downvotes.find_by_downvotable_id_and_downvotable_type(id, type)) %>
-		<div id="downvote-feedback"><%= render 'downvotes/downvotes', type: type, id: id  %></div>
+	<% if !user_has_downvoted?(id) %>
+		<%= render 'downvotes/downvotes', type: type, id: id  %>
 	<% end %>
 <% end %>

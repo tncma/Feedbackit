@@ -1,2 +1,2 @@
-$("#downvote-feedback").html("<%= escape_javascript render('static_pages/vote_downvote', type: @downvotable.class.to_s, id: @downvotable.id) %>");
+$("#vote-downvote").html("<%= escape_javascript render('static_pages/vote_downvote', type: @downvotable.class.to_s, id: @downvotable.id) %>");
 $("#vote-count-feedback").html("<%= escape_javascript pluralize (@downvotable.votes.count - @downvotable.downvotes.count), 'vote' %>");
