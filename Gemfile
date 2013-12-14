@@ -7,6 +7,8 @@ gem 'rails', '4.0.1'
 group :development do
 	gem 'sqlite3'
 	gem 'letter_opener'
+	gem 'faker'
+	gem 'populator'
 end
 
 group :production do
