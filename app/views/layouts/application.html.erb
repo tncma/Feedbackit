@@ -50,6 +50,7 @@
             <ul class="nav">
               <% if user_signed_in? %>
                 <li><%= link_to "Profile", profile_path  %></li>
+                <li><%= link_to "signout",destroy_user_session_path, method: :delete %></li>
               <% else %>
                 <li><%= link_to "Login", new_user_session_path  %></li>
               <% end %>
@@ -61,7 +62,7 @@
       </div>
     </div>
 
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
       <div class="row-fluid">
         <div class="span3">
           <div class="well sidebar-nav">
@@ -71,8 +72,8 @@
               <li><%= link_to "Link2", "/path2"  %></li>
               <li><%= link_to "Link3", "/path3"  %></li>
             </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
+          </div>
+        </div> -->
         <div class="span9">
           <%= bootstrap_flash %>
           <%= yield %>

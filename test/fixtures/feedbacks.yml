@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  feedback_content: MyText
+  when: 2013-12-14 16:22:49
+  where: MyString
+  category_id: 
+  tag_id: 
+
+two:
+  feedback_content: MyText
+  when: 2013-12-14 16:22:49
+  where: MyString
+  category_id: 
+  tag_id: 

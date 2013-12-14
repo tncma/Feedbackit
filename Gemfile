@@ -20,6 +20,8 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0'
 
+gem 'carrierwave'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
