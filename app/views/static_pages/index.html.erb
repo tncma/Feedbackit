@@ -1,8 +1,12 @@
 <% @feedbacks.each do |f| %>
-	<div id="">
+	<div id="feedback_<%= f.id" %>">
 		<%= f.heading %><br />
 		<%= f.feedback_content %>
-		<div id="vote-downvote"><%= render 'vote_downvote', id: f.id, type: "Feedback" %></div>
-		<div id="vote-count-feedback"><%= pluralize (f.votes.count - f.downvotes.count), 'vote' %></div>
+		<div id="vote-downvote-<%= f.id %>">
+			<%= render 'vote_downvote', id: f.id, type: "Feedback" %>
+		</div>
+		<div id="vote-count-feedback-<%= f.id %>">
+			<%= pluralize (f.votes.count - f.downvotes.count), 'vote' %>
+		</div>
 	</div>
 <% end %>
