@@ -37,6 +37,11 @@ With the amount of people who use these Government services, we can get so many 
 	
 	1) The entire app is built on Ruby on Rails. Install necessary gems.
 
+#### Technology Stack
+	
+	1) Ruby on Rails 4.0.1
+	2) Postgresql
+	3) RMagick for scaling images
 
 #### Team members
 	
