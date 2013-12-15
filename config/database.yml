@@ -21,8 +21,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: feedbackit_production
-  host: localhost
+  database: d8k3skut1qo70d
+  host: ec2-54-225-101-18.compute-1.amazonaws.com
   pool: 5
-  username: <%= ENV['FEEDBACKIT_POSTGRES_USERNAME'] %>
-  password: <%= ENV['FEEDBACKIT_POSTGRES_PASSWORD'] %>
+  username: xsnqbjzvkfcgrm
+  password: JujxH4dXiEext1gVE6kLydQFB9
