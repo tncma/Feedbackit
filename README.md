@@ -15,11 +15,27 @@ With the amount of people who use these Government services, we can get so many 
 
 	3) View feedbacks based on category. 
 
-	4) Admin can view feedacks based on categories and reply to users.
+	4) Admin can view feedacks based on categories and reply to users in the form of Email regarding the feedback.
 
-	5) Adding relevant image to a feedback.
+	5) Adding relevant image, date and location to a feedback.
 
+##### TODO
+	
+	1) Adding Tamil langauage compatibility.
 
+	2) Adding more admins based on location. For example, the category Transport can have multiple admins based on location. There can be a transport admin in Madurai and Chennai.
+
+	3) Making a mobile app which will let users upload feedbacks on the go. 
+
+#### Team members
+	
+	1)Ananth Madhavan
+
+	2)Sudharsanan Muralidharan
+
+	3) Neela Saranya
+
+	4) Shrikanth, K,R
 
 
 
