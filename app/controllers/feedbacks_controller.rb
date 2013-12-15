@@ -1,6 +1,6 @@
 class FeedbacksController < ApplicationController
 
-	before_filter :authenticate_user!
+	before_filter :auth_user!, except: [:show]
 	before_filter :collect_data, only: [:new]
 
 	def new
@@ -35,7 +35,17 @@ class FeedbacksController < ApplicationController
 	def destroy
 		@feedback = Feedback.find(params[:id])
 		@feedback.destroy
+		redirect_to root_url
 	end
+
+	def auth_user!(opts = {})
+  		if admin_signed_in?
+   			authenticate_admin!
+  		else
+    		authenticate_user!
+  		end
+	end
+
 
 	private
 

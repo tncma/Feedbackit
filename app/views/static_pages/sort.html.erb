@@ -1,12 +1,16 @@
 <div class="row">
-	<%= render 'static_pages/feedback' %>
+	<%= render 'feedback' %>
 	<div class="col-lg-4">
   		<div class="well">
     		<h4>Feedback By Category</h4>
     		<%= form_tag sort_url, method: :get do %>
       			<select name="static_pages[category]" id="select" class="form-control">
       				<% @categories.each do |category| %>
-              			<option value="<%= category.id %>"><%= category.name %></option>
+              			<% if category.id.to_s == @category.to_s %>
+              				<option value="<%= category.id %>" selected><%= category.name %></option>
+              			<% else %>
+              				<option value="<%= category.id %>"><%= category.name %></option>
+              			<% end %>
               		<% end %>
             	</select>
             	<br>
