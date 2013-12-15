@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131214231748) do
+ActiveRecord::Schema.define(version: 20131215061500) do
 
   create_table "admins", force: true do |t|
     t.string   "name",                   default: "Admin", null: false
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20131214231748) do
     t.integer  "user_id"
     t.string   "image"
     t.integer  "votes_count",      default: 0
+    t.boolean  "replied"
   end
 
   add_index "feedbacks", ["category_id"], name: "index_feedbacks_on_category_id"

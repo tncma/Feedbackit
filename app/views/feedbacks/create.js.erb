@@ -1,5 +1,6 @@
 <% if remotipart_submitted? %>
 	window.location.href = '<%= root_url %>'
 <% else %>
-	<%= "error occurred" %>
+	$("#error").append('<div class="alert fade in alert-danger">Some Error Occurred!
+      <button class="close" data-dismiss="alert">×</button></div>');
 <% end %>

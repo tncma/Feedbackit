@@ -18,4 +18,8 @@ class Feedback < ActiveRecord::Base
   	FeedbackMailer.send_mail_to_user(user).deliver
   end
 
+  def send_reply(user, content)
+    FeedbackMailer.send_reply_to_user(user, content).deliver
+  end
+
 end

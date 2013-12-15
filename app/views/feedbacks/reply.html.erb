@@ -1,0 +1,6 @@
+<%= @feedback.heading %>
+<%= form_tag reply_to_user_path, method: :post do %>
+	<%= hidden_field_tag :feedback_id, @feedback.id %>
+	<%= text_area_tag :reply_content %>
+	<%= submit_tag "Reply" %>
+<% end %>
