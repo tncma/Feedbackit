@@ -9,6 +9,7 @@ class Feedback < ActiveRecord::Base
 
   validates :heading, presence: true, length: { maximum: 100 }
   validates :feedback_content, presence: true, length: { minimum: 20 }
+  validates_date :when, presence: true, on_or_before: :today
 
   def send_mail(user)
   	FeedbackMailer.send_mail_to_user(user).deliver
