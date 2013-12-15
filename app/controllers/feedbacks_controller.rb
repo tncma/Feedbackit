@@ -11,6 +11,9 @@ class FeedbacksController < ApplicationController
 		@feedback = Feedback.new feedback_parameters
 		@feedback.user = current_user
 		
+		@feedback.save!
+		@feedback.send_mail(@feedback.user)
+		
 		respond_to do |format|
 			format.js
 		end

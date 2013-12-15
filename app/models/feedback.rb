@@ -7,4 +7,11 @@ class Feedback < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  validates :heading, presence: true, length: { maximum: 100 }
+  validates :feedback_content, presence: true, length: { minimum: 20 }
+
+  def send_mail(user)
+  	FeedbackMailer.send_mail_to_user(user).deliver
+  end
+
 end
