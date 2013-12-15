@@ -83,3 +83,7 @@ body #login{
   .form-group{
     margin-bottom: 15px !important;
   }
+
+  .pagination a{
+    color: #18bc9c;
+  }

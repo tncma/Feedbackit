@@ -5,10 +5,10 @@
         <legend> Feedback </legend>
         <h4> 
           <%= @feedback.heading %>
-          <span class="label label-success" style="float:right;"><%= @feedback.category.name %></span>
+          <span class="label label-success" style="float:right;"><%= @feedback.category.name unless @feedback.category.nil? %></span>
         </h4>
         <div id="category">
-          <%= @feedback.category.name %>
+          <%= @feedback.tag.name unless @feedback.tag.nil? %>
         </div>
         <div style="margin-top: 10px;">
           <a href=""><i class="fa fa-calendar"></i></a>&nbsp;<%= @feedback.when.to_formatted_s(:long) %>
