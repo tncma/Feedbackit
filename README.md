@@ -1,27 +1,27 @@
-#### FeedbackIt
+### FeedbackIt
+*Feedbacks on the Go. *
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Introduction
 
-Things you may want to cover:
+Government Services and Products are like any other products and services that we have in the market today. They require constant upgrading and maintainance based on various parameters. Feedbacks from the ones who use these services and products come in the top category in the list of parameters.
+go
+With the amount of people who use these Government services, we can get so many useful insights,feedbacks and suggestions on how to make the existing status quo better and more efficient. Imagine the power of a community which has useful feedbacks and suggestions for all the services provided by our Government! With that in mind, we have built FeedbackIt, a platform which enables users to submit feedbacks, ideas and suggestions on any service that they use on Real Time basis.
 
-* Ruby version
+#### Description
+	
+	1) Enable users to provide feedbacks/ideas/suggestions on various categories like education, transport, sanitation and health.
 
-* System dependencies
+	2) Share the feedback and get up-voted. Popular feedbacks get featured in the main page.
 
-* Configuration
+	3) View feedbacks based on category. 
 
-* Database creation
+	4) Admin can view feedacks based on categories and reply to users.
 
-* Database initialization
+	5) Adding relevant image to a feedback.
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
 
 
 Please feel free to use a different markup language if you do not plan to run
