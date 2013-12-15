@@ -19,13 +19,24 @@ With the amount of people who use these Government services, we can get so many 
 
 	5) Adding relevant image, date and location to a feedback.
 
+	6) Moderated environment. Admin can delete inappropriate feedbacks.
+
+	7) Feedbacks are classified further as unaddressed and addressed based on admin response.
+
+	8) The app is hosted on Heroku at feedbackit.herokuapp.com 
+
 ##### TODO
 	
-	1) Adding Tamil langauage compatibility.
+	1) Adding multi language support.
 
-	2) Adding more admins based on location. For example, the category Transport can have multiple admins based on location. There can be a transport admin in Madurai and Chennai.
+	2) Adding more admins based on location. For example, the category transport can have multiple admins based on location. There can be a transport admin in Madurai and Chennai. This process would help us distribute the incoming feedbacks based on locations and categories.
 
-	3) Making a mobile app which will let users upload feedbacks on the go. 
+	3) Making a mobile app which will let users upload feedbacks on the go.
+
+#### Initial Setup 
+	
+	1) The entire app is built on Ruby on Rails. Install necessary gems.
+
 
 #### Team members
 	
@@ -33,7 +44,7 @@ With the amount of people who use these Government services, we can get so many 
 
 	2)Sudharsanan Muralidharan
 
-	3) Neela Saranya
+	3) Neela Saranya, A
 
 	4) Shrikanth, K,R
 
