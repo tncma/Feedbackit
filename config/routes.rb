@@ -8,7 +8,11 @@ FeedbackIt::Application.routes.draw do
   end
 
   get "static_pages/index"
+  #match "static_pages/index/" => "static_pages#index", as: 'index', via: 'get'
   get "profile" => "users#index"
+  get "sort" => "static_pages#sort"
+  match "reply/:feedback_id" => "feedbacks#reply", as: 'reply', via: :get
+  post "reply_to_user" => "feedbacks#reply_to_user"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

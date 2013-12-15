@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-lg-6" style="float:none !important; margin:0 auto;">
+        <div class="well">
+		<%= form_tag reply_to_user_path,  html: { class: "bs-example form-horizontal"},method: :post do %>
+			<%= hidden_field_tag :feedback_id, @feedback.id %>
+			<div class="form-group">
+				<%= label_tag "feedback_reply" %>
+				
+					<%= text_area_tag :reply_content, "", rows: "5", class: 'form-control', style: 'height: 200px;' %>
+				
+            </div>
+				
+			<%= submit_tag "Reply", class: 'btn btn-default' %>
+		<% end %>
+		</div>
+	</div>
+</div>

@@ -16,3 +16,7 @@
 //= require bootstrap
 //= require jquery.remotipart
 //= require_tree .
+
+ $(function() {
+    $("#feedback-date").datepicker({ dateFormat: 'D, dd M yy' });
+ });

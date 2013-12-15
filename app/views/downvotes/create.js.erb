@@ -1,5 +1,4 @@
-<% if @downvote.save %>
-	$("#vote-downvote-<%= @feedback.id %>").html("<%= escape_javascript render('static_pages/vote_downvote', f: @feedback) %>");
-	$("#vote-count-feedback-<%= @feedback.id %>").html("<%= @feedback.votes.count - @feedback.downvotes.count %>");
-<% end %>
+$("#vote-downvote-<%= @feedback.id %>").html("<%= escape_javascript render('static_pages/vote_downvote', f: @feedback) %>");
+$("#vote-count-feedback-<%= @feedback.id %>").html("<%= @feedback.votes_count %>");
+
 

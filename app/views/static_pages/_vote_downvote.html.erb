@@ -14,5 +14,9 @@
 	<% else %>
 		<%= render 'downvotes/downvotes', f:f %>
 	<% end %>
-
+<% else %>
+	<div id="vote-count-feedback-<%= f.id %>" class="text-center">
+		<%= f.votes_count %>
+	</div>	
 <% end %>
+
