@@ -9,7 +9,7 @@ class FeedbackMailer < ActionMailer::Base
   def send_reply_to_user(user, content)
 		@user = user
 		@content = content
-		mail(to: @user.mail, subject: "Your Feedback has been addressed")  	
+		mail(to: @user.email, subject: 'Your Feedback has been addressed')  	
   end
 
 end

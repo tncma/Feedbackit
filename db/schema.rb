@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20131215061500) do
     t.integer  "user_id"
     t.string   "image"
     t.integer  "votes_count",      default: 0
-    t.boolean  "replied"
+    t.boolean  "replied",          default: false
   end
 
   add_index "feedbacks", ["category_id"], name: "index_feedbacks_on_category_id"

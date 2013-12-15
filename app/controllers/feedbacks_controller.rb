@@ -46,7 +46,8 @@ class FeedbacksController < ApplicationController
 	def reply_to_user
 		@feedback = Feedback.find(params[:feedback_id])
 		@user = @feedback.user
-		Feedback.send_reply(@user, params[:reply_content])
+		@feedback.update_attribute(:replied, true)
+		@feedback.send_reply(@user, params[:reply_content])
 		redirect_to root_url
 	end
 
