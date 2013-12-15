@@ -1,4 +1,10 @@
 <div class="container">
+  <% if @user.errors.any? %>
+  <div class='alert fade in alert-danger'>
+    <%= @user.errors.full_messages.first %>
+    <a href="/users/sign_up" class='close'>×</a>
+  </div>
+  <% end %>
   <br>
   <div class="row">
       <div class="col-lg-4" style="float:none !important; margin:0 auto;">

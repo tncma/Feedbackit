@@ -17,12 +17,12 @@
           <a href=""><i class="fa fa-map-marker"></i></a>&nbsp;&nbsp;&nbsp;<%= @feedback.where %>
         </div>
         <h4>Feedback Content </h4>
-        <div id="feedback-text">
-          <p style="line-height: 3rem;"><%= @feedback.feedback_content %></p>
-        </div>
-        <br>
         <div>
           <%= image_tag @feedback.image_url(:thumb) unless @feedback.image_url.nil? %>
+        </div>
+        <br>
+        <div id="feedback-text">
+          <p style="line-height: 3rem;"><%= @feedback.feedback_content %></p>
         </div>
         
         <br>
