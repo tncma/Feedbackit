@@ -21,7 +21,9 @@ With the amount of people who use these Government services, we can get so many 
 
 	6) Moderated environment. Admin can delete inappropriate feedbacks.
 
-	7) Feedbacks are classified further as unaddressed and addressed based on admin response. 
+	7) Feedbacks are classified further as unaddressed and addressed based on admin response.
+
+	8) The app is hosted on Heroku at feedbackit.herokuapp.com 
 
 ##### TODO
 	
