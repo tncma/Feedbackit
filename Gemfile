@@ -15,6 +15,8 @@ group :production do
 	gem 'pg'
 end
 
+gem 'truncate_html'
+
 gem "therubyracer"
 gem "less-rails" 
 gem "twitter-bootstrap-rails"

@@ -9,7 +9,7 @@
          	<div class="col-lg-10 col-small-12">
          		<div id="content" style="float:left; padding:1%;">
 	         	<h2><%= link_to f.heading, feedback_url(f) %></h2>
-				<p><%= f.feedback_content %></p>
+				<p><%= truncate_html(f.feedback_content.html_safe, length: 150, omission: '...(continued)') %></p>
 				<% if admin_signed_in? %>
 					<p><%= link_to "Reply", reply_url(f), class: 'btn btn-default' %>
 					<%= link_to "Delete", feedback_url(f), method: :delete, class: 'btn btn-default' %></p>
