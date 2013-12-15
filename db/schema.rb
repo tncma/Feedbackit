@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131215061500) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "admins", force: true do |t|
     t.string   "name",                   default: "Admin", null: false
     t.string   "email",                  default: "",      null: false
@@ -33,8 +30,8 @@ ActiveRecord::Schema.define(version: 20131215061500) do
     t.datetime "updated_at"
   end
 
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -50,8 +47,8 @@ ActiveRecord::Schema.define(version: 20131215061500) do
     t.datetime "updated_at"
   end
 
-  add_index "downvotes", ["feedback_id"], name: "index_downvotes_on_feedback_id", using: :btree
-  add_index "downvotes", ["user_id"], name: "index_downvotes_on_user_id", using: :btree
+  add_index "downvotes", ["feedback_id"], name: "index_downvotes_on_feedback_id"
+  add_index "downvotes", ["user_id"], name: "index_downvotes_on_user_id"
 
   create_table "feedbacks", force: true do |t|
     t.text     "feedback_content"
@@ -68,9 +65,9 @@ ActiveRecord::Schema.define(version: 20131215061500) do
     t.boolean  "replied",          default: false
   end
 
-  add_index "feedbacks", ["category_id"], name: "index_feedbacks_on_category_id", using: :btree
-  add_index "feedbacks", ["tag_id"], name: "index_feedbacks_on_tag_id", using: :btree
-  add_index "feedbacks", ["user_id"], name: "index_feedbacks_on_user_id", using: :btree
+  add_index "feedbacks", ["category_id"], name: "index_feedbacks_on_category_id"
+  add_index "feedbacks", ["tag_id"], name: "index_feedbacks_on_tag_id"
+  add_index "feedbacks", ["user_id"], name: "index_feedbacks_on_user_id"
 
   create_table "tags", force: true do |t|
     t.string   "name"
@@ -99,9 +96,9 @@ ActiveRecord::Schema.define(version: 20131215061500) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "votes", force: true do |t|
     t.integer  "feedback_id"
@@ -110,7 +107,7 @@ ActiveRecord::Schema.define(version: 20131215061500) do
     t.datetime "updated_at"
   end
 
-  add_index "votes", ["feedback_id"], name: "index_votes_on_feedback_id", using: :btree
-  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
+  add_index "votes", ["feedback_id"], name: "index_votes_on_feedback_id"
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id"
 
 end
