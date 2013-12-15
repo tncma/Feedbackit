@@ -21,11 +21,16 @@ With the amount of people who use these Government services, we can get so many 
 
 ##### TODO
 	
-	1) Adding Tamil langauage compatibility.
+	1) Adding multi language support.
 
-	2) Adding more admins based on location. For example, the category Transport can have multiple admins based on location. There can be a transport admin in Madurai and Chennai.
+	2) Adding more admins based on location. For example, the category Transport can have multiple admins based on location. There can be a transport admin in Madurai and Chennai. This process would help us distribute the incoming feedbacks based on locations and categories.
 
-	3) Making a mobile app which will let users upload feedbacks on the go. 
+	3) Making a mobile app which will let users upload feedbacks on the go.
+
+#### Initial Setup 
+	
+	1) The entire app built on Ruby on Rails. Install necessary gems.
+
 
 #### Team members
 	
