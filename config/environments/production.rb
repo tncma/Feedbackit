@@ -2,7 +2,7 @@ FeedbackIt::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   #Change while deployment
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'feedbackit.herokuapp.com' }
   
   # Code is not reloaded between requests.
   config.cache_classes = true
